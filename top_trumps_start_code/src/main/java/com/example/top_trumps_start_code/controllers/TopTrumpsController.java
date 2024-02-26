@@ -19,8 +19,7 @@ TopTrumpService topTrumpService;
 @PostMapping
 public ResponseEntity <String> showCards (@RequestBody ArrayList<Card> cards)
     {
-        Card card = new Card
-        String reply = topTrumpService.checkWinner(card1, card2);
+        String reply = topTrumpService.checkWinner(cards.get(0), cards.get(1));
         return new ResponseEntity<>(reply, HttpStatus.CREATED);
     }
 }
